@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
-logo: _layouts/logo.png
+logo: /_layouts/logo.png
 title: R para Ciência de Dados II
+description: Repositório da turma de 10/2022 do R para Ciência de Dados II
