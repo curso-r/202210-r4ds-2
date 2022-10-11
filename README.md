@@ -22,16 +22,16 @@
 
 ## Exemplos de Aula
 
-| Exemplo                                                                                                                    |
-|:---------------------------------------------------------------------------------------------------------------------------|
-| [01-organizacao-projeto.R](https://raw.githubusercontent.com/curso-r/202210-r4ds-2/main/exemplos/01-organizacao-projeto.R) |
+| Exemplo                                                                                               |
+|:------------------------------------------------------------------------------------------------------|
+| [01-organizacao-projeto.R](https://curso-r.github.io/202210-r4ds-2/exemplos/01-organizacao-projeto.R) |
 
 ## Exercícios
 
-| Exercício                                                                                                    |
-|:-------------------------------------------------------------------------------------------------------------|
-| [tarefas.Rmd](https://raw.githubusercontent.com/curso-r/202210-r4ds-2/main/materiais/exercicios/tarefas.Rmd) |
-| [tcc.Rmd](https://raw.githubusercontent.com/curso-r/202210-r4ds-2/main/materiais/exercicios/tcc.Rmd)         |
+| Exercício                                                                               |
+|:----------------------------------------------------------------------------------------|
+| [tarefas.Rmd](https://curso-r.github.io/202210-r4ds-2/materiais/exercicios/tarefas.Rmd) |
+| [tcc.Rmd](https://curso-r.github.io/202210-r4ds-2/materiais/exercicios/tcc.Rmd)         |
 
 ## Material Extra
 

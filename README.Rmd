@@ -8,8 +8,16 @@ params:
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>", echo = FALSE)
-url_page <- "https://curso-r.github.io/"
-url_raw <- "https://raw.githubusercontent.com/curso-r/"
+path_to_url <- function(path) {
+  path |>
+    tibble::tibble(file = _) |>
+    dplyr::mutate(
+      url = file |>
+        paste0("https://curso-r.github.io/", params$repo, "/", ... = _) |>
+        paste0("[", fs::path_file(file), "](", ... = _, ")")
+    ) |>
+    dplyr::select(url)
+}
 ```
 
 ## Links Importantes
@@ -24,13 +32,8 @@ url_raw <- "https://raw.githubusercontent.com/curso-r/"
 ```{r}
 "materiais/slides/" |>
   fs::dir_ls(glob = "*.html") |>
-  tibble::tibble(file = _) |>
-  dplyr::mutate(
-    Slide = file |>
-      stringr::str_c(url_page, params$repo, "/", ... = _) |>
-      stringr::str_c("[", fs::path_file(file), "](", ... = _, ")")
-  ) |>
-  dplyr::select(Slide) |>
+  path_to_url() |>
+  dplyr::select(Slide = url) |>
   knitr::kable()
 ```
 
@@ -39,13 +42,8 @@ url_raw <- "https://raw.githubusercontent.com/curso-r/"
 ```{r}
 "exemplos/" |>
   fs::dir_ls() |>
-  tibble::tibble(file = _) |>
-  dplyr::mutate(
-    Exemplo = file |>
-      stringr::str_c(url_raw, params$repo, "/main/", ... = _) |>
-      stringr::str_c("[", fs::path_file(file), "](", ... = _, ")")
-  ) |>
-  dplyr::select(Exemplo) |>
+  path_to_url() |>
+  dplyr::select(Exemplo = url) |>
   knitr::kable()
 ```
 
@@ -54,13 +52,8 @@ url_raw <- "https://raw.githubusercontent.com/curso-r/"
 ```{r}
 "materiais/exercicios/" |>
   fs::dir_ls() |>
-  tibble::tibble(file = _) |>
-  dplyr::mutate(
-    Exercício = file |>
-      stringr::str_c(url_raw, params$repo, "/main/", ... = _) |>
-      stringr::str_c("[", fs::path_file(file), "](", ... = _, ")")
-  ) |>
-  dplyr::select(Exercício) |>
+  path_to_url() |>
+  dplyr::select(Exercício = url) |>
   knitr::kable()
 ```
 
