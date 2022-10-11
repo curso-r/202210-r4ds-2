@@ -11,8 +11,8 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  repository-projects: write
-  contents: write
+  repository-projects: read
+  contents: read
   pages: write
   id-token: write
 
@@ -29,6 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          token: ${{ secrets.PAGES_PAT }}
           submodules: true
       - name: Setup Pages
         uses: actions/configure-pages@v2
