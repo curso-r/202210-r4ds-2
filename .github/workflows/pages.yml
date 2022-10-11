@@ -31,6 +31,8 @@ jobs:
         with:
           token: ${{ secrets.PAGES_PAT }}
           submodules: true
+      - name: Zip folders
+        run: zip -r curso.zip .
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Build with Jekyll
