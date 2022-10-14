@@ -25,6 +25,7 @@
 | Exemplo                                                                                               |
 |:------------------------------------------------------------------------------------------------------|
 | [01-organizacao-projeto.R](https://curso-r.github.io/202210-r4ds-2/exemplos/01-organizacao-projeto.R) |
+| [02-dplyr-tidyr.R](https://curso-r.github.io/202210-r4ds-2/exemplos/02-dplyr-tidyr.R)                 |
 
 ## Exercícios
 
@@ -49,7 +50,7 @@ relacionadas com o conteúdo da aula).
 |    1 | Funções        | Criando funções                                                            | <https://r4ds.had.co.nz/functions.html>                                                     |
 |    1 | Git e GitHub   | Slides sobre Git e GitHub - Beatriz Milz                                   | <https://beatrizmilz.github.io/2022-curso-de-verao-ime-usp-relatorios/slides/#git-e-github> |
 |    2 | tidyr          | Colinha do {dplyr}                                                         | <https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-transformation.pdf>      |
-|    2 | tidyr          | Colinha do {tidyr}                                                         | <https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-import.pdf>              |
+|    2 | tidyr          | Colinha do {tidyr}                                                         | <https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf>                      |
 |    2 | tidyr          | Post sobre a mudança para pivot_longer() e pivot_wider()                   | <https://blog.curso-r.com/posts/2020-08-13-pivotagem/>                                      |
 |    2 | tidyr          | Desafio 1: a resolução utiliza funções de pivotagem                        | <https://discourse.curso-r.com/t/desafio-1-manipulando-a-base-de-filmes-do-imdb/1870>       |
 |    2 | tidyr          | Texto sobre tidyr por Garrick Aden-Buie                                    | <https://www.garrickadenbuie.com/project/tidyexplain/>                                      |
