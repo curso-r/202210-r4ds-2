@@ -1,3 +1,141 @@
+#              Rua
+# -----------------------------------
+# Casa1    Casa2     Casa3     Condom.
+# -----    -----     -----     ------
+#  123  c(T, F, T)   "abc"    C1 C2 C3
+#                             -- -- --
+#                             1  2  3
+
+# [ ] = casa
+# [[ ]] = pessoas
+
+l <- list(
+  um_numero = 123,
+  um_vetor = c(TRUE, FALSE, TRUE),
+  uma_string = "abc",
+  uma_lista = list(1, 2, 3)
+)
+
+l[1]
+l[2]
+l[3]
+l[4]
+
+l[[1]]
+l[[2]]
+l[[3]]
+l[[4]]
+
+l$um_numero
+l$um_vetor
+l$uma_string
+l$uma_lista
+
+l$uma_lista[[1]]
+l$uma_lista[[2]]
+l$uma_lista[[3]]
+
+l[[4]][[1]]
+l[[4]][[2]]
+l[[4]][[3]]
+
+df <- list(
+  titulo = c("Avatar", "Batman", "Senhor dos Anéis"),
+  lucro = c(10, 20, 30),
+  elenco = list(c("A", "V", "T"), c("B", "A"), c("S", "D", "A"))
+)
+
+# titulo do 2o filme
+df$titulo[[2]]
+df$titulo[2]
+df[[1]][[2]]
+df[[1]][2]
+
+# nome do 2o ator do 3o filme
+df$elenco[[3]][[2]]
+df$elenco[[3]][2]
+df[[3]][[3]][[2]]
+df[[3]][[3]][2]
+
+library(purrr)
+
+pluck(df, "elenco", 3, 2)
+#        $elenco[[3]][[2]]
+pluck(df, 3, 3, 2)
+
+pluck(df, "titulo", 2)
+pluck(df, 1, 2)
+
+# ------------------------------------------
+
+vec <- 5:9
+idx <- 1:5
+for (i in idx) {
+  vec[i] <- vec[i] + 10
+}
+vec
+
+library(stringr)
+
+padroes <- c("a", "b", "c")
+
+# loop
+resultado <- c()
+for (i in seq_along(padroes)) {
+  resultado[i] <- str_detect("asdfasdfasdf", padroes[i])
+}
+resultado
+
+# função intermediária
+str_detect_invertida <- function(padrao, texto) {
+  str_detect(texto, padrao)
+}
+map_lgl(padroes, str_detect_invertida, texto = "asdfasdfasdf")
+
+# til
+map_lgl(padroes, ~ str_detect("asdfasdfasdf", .x))
+
+library(lubridate)
+
+datas <- c(
+  "2022-05-01 10:00:00",
+  "2022-05-01 11:00:00",
+  "2022-05-01 12:00:00"
+)
+fusos <- c("America/Sao_Paulo",
+           "Europe/London",
+           "Europe/Paris",
+           "America/New_York")
+
+# Tudo
+list(
+  as_datetime(datas, fusos[1]),
+  as_datetime(datas, fusos[2]),
+  as_datetime(datas, fusos[3]),
+  as_datetime(datas, fusos[4])
+)
+
+
+# Loop
+resultado <- list()
+for (i in seq_along(fusos)) {
+  resultado[[i]] <- as_datetime(datas, fusos[i])
+}
+resultado
+
+# NÃO FUNCIONA
+map(fusos, as_datetime, datas)
+
+# Função intermediária
+as_datetime_invertida <- function(fuso, data) {
+  as_datetime(data, fuso)
+}
+map(fusos, as_datetime_invertida, datas)
+
+# Lambda
+map(fusos, ~ as_datetime(datas, .x))
+
+
 # -------------------------------------------------------------------------
 
 # Motivação: ler e empilhar as bases IMDB separadas por ano

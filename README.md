@@ -28,6 +28,7 @@
 | [02-dplyr-tidyr.R](https://curso-r.github.io/202210-r4ds-2/exemplos/02-dplyr-tidyr.R)                 |
 | [03-stringr.R](https://curso-r.github.io/202210-r4ds-2/exemplos/03-stringr.R)                         |
 | [04-lubridate-forcats.R](https://curso-r.github.io/202210-r4ds-2/exemplos/04-lubridate-forcats.R)     |
+| [05-purrr.R](https://curso-r.github.io/202210-r4ds-2/exemplos/05-purrr.R)                             |
 
 ## Exercícios
 
