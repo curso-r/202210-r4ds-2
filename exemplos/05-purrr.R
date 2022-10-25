@@ -19,7 +19,8 @@ read_rds("data/imdb_por_ano/imdb_1916.rds")
 # com base R
 arquivos <- list.files("data/imdb_por_ano", full.names = TRUE)
 
-
+# O full names serve pra passar o caminho inteiro do arquivo
+list.files("data/imdb_por_ano", full.names = FALSE)
 
 
 # vai ler cada arquivo do vetor "arquivos"
@@ -83,7 +84,9 @@ imdb |>
   faz_grafico_dispersao()
 
 
-
+imdb |>
+  ggplot(aes(x = orcamento, y = receita)) +
+  geom_point()
 
 # fazendo para cada ano:
 
@@ -110,7 +113,6 @@ imdb_graficos |>
 
 
 
-
 # e se eu quiser salvar os graficos?
 
 
@@ -132,7 +134,10 @@ o_que_walk_devolve <- file_names[1:10] |>
 
 
 
+
 # -------------------------------------------------------------------------
+
+
 
 faz_grafico_dispersao_titulo <- function(tab, titulo){
   tab |>
@@ -156,7 +161,7 @@ imdb_graficos_2 <- imdb |>
 
 # especificando o ano
 imdb_graficos_2 |>
-  filter(ano == 2009) |>
+  filter(ano == 2003) |>
   pluck("grafico", 1)
 
 
@@ -197,7 +202,7 @@ tab_modelos <- mtcars |>
 
 
 tab_modelos |>
-  filter(cyl == 8) |>
+  filter(cyl == 6) |>
   pluck("modelo", 1) |>
   summary()
 
